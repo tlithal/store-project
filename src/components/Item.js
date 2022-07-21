@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export const Item = (props) => {
     //Creates an const 'item' using the values from the prop
@@ -9,7 +10,7 @@ export const Item = (props) => {
         <Col className="col-4">
             <Card className="w-75 mb-5 mx-auto border-dark">
                 <Card.Header className="text-center">
-                    <h2>{item.name}</h2>
+                    <Link to={`${item.id}`}><h2>{item.name}</h2></Link>
                 </Card.Header>
                 <Card.Body className="text-center">
                     Amount In Stock: {item.stock}
