@@ -2,19 +2,16 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 import { storeApi } from '../api/StoreApi';
+import DeleteButton from './DeleteButton';
 
 function Inventory() {
     const [inventory, setInventory] = useState([]);
 
-    const deleteItem = async(e, id) => {
-        e.preventDefault();
-        await storeApi.deleteInv(id);
+    const refresh = () => {
         storeApi.getInv()
             .then((inv) => setInventory(inv));
-
     }
 
     useEffect(() => {
@@ -26,8 +23,8 @@ function Inventory() {
         <div>
             <Container>
                 <h1 className="text-center mx-auto">Inventory</h1>
-
-                <Table striped bordered hover variant='dark'>
+                <hr />
+                <Table striped bordered hover variant='dark' responsive="md">
                     <thead>
                         <tr>
                             <th>Item</th>
@@ -46,10 +43,10 @@ function Inventory() {
                                 <td>{inv.stock}</td>
                                 <td>{(inv.available) ? 'In Stock' : 'Out of Stock'}</td>
                                 <td className="text-center mx-auto">
-                                    <Link to={`${inv.id}`} className="btn btn-secondary">Edit</Link>
+                                    <Link to={`${inv.id}`} state={{item: {...inv}}}><Button variant="outline-light">Edit</Button></Link>
                                 </td>
                                 <td className="text-center mx-auto">
-                                    <Button variant="outline-danger" onClick={(e) => { deleteItem(e, inv.id) }}>Delete</Button>
+                                    <DeleteButton refresh={refresh} {...inv} />
                                 </td>
                             </tr>
                         ))}

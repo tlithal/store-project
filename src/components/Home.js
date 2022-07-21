@@ -1,8 +1,12 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 function Home() {
     return(
-        <h1>Home</h1>
+        <Container fluid className="text-center mx-auto">
+            <h1>Home</h1>
+            <hr />
+        </Container>
     );
 }
 

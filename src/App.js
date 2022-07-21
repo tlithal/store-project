@@ -13,8 +13,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store />} />
         <Route path="/inventory" element={<Inventory />}>
-          <Route path=":id" element={<ItemForm />} />
+          {/* <Route path=":id" element={<ItemForm />} /> */}
         </Route>
+        <Route path="/inventory/:id" element={<ItemForm />} />
       </Routes>
     </div>
   );

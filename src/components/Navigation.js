@@ -9,15 +9,17 @@ function Navigation(props) {
         <div>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/">
-                    <img
-                        src="/images/melt.jpg"
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                        alt="Store Icon"
-                    />{" "}
-                    Toby's Store
+                    <Navbar.Brand>
+                    <Link to="/" className="nav-link">
+                        <img
+                            src="/images/melt.jpg"
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                            alt="Store Icon"
+                        />{" "}
+                        Toby's Store
+                    </Link>
                     </Navbar.Brand>
                     <Nav className="me-auto">
                         <Link to="/" className="nav-link">Home</Link>
