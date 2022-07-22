@@ -1,10 +1,12 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { Container, Button } from 'react-bootstrap';
+import { Outlet } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 import { storeApi } from '../api/StoreApi';
 import DeleteButton from './DeleteButton';
+import EditButton from './EditButton';
+import CreateButton from './CreateButton';
 
 function Inventory() {
     const [inventory, setInventory] = useState([]);
@@ -21,7 +23,7 @@ function Inventory() {
 
     return (
         <div>
-            <Container>
+            <Container className="font-link">
                 <h1 className="text-center mx-auto">Inventory</h1>
                 <hr />
                 <Table striped bordered hover variant='dark' responsive="md">
@@ -43,7 +45,7 @@ function Inventory() {
                                 <td>{inv.stock}</td>
                                 <td>{(inv.available) ? 'In Stock' : 'Out of Stock'}</td>
                                 <td className="text-center mx-auto">
-                                    <Link to={`${inv.id}`} state={{item: {...inv}}}><Button variant="outline-light">Edit</Button></Link>
+                                    <EditButton {...inv} refresh={refresh}/>
                                 </td>
                                 <td className="text-center mx-auto">
                                     <DeleteButton refresh={refresh} {...inv} />
@@ -53,6 +55,8 @@ function Inventory() {
                     </tbody>
                     <Outlet />
                 </Table>
+                <br />
+                <CreateButton refresh={refresh} />
             </Container>
         </div>
     );

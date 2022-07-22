@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
+import { ItemForm } from './ItemForm';
 
 function ItemModal(props) {
-    const [show, setShow] = useState(false);
     
+    const item = props;
+
     const handleClose = () => {
         props.handleClose();
     }
 
     return(
-            <Modal show={props.show} onHide={handleClose}>
+            <Modal show={props.show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal Heading</Modal.Title>
+                    <Modal.Title>Edit Item Here</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Testing</Modal.Body>
+                <Modal.Body><ItemForm {...item} handleClose={handleClose} /></Modal.Body>
                 <Modal.Footer>
                     <Button variant="outline-secondary" onClick={handleClose}>Close</Button>
                 </Modal.Footer>

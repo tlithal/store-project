@@ -56,7 +56,7 @@ class StoreApi {
                 body: JSON.stringify({
                     'name': `${name}`,
                     'stock': `${stock}`,
-                    'available': `${available}`,
+                    'available': available,
                     'price': `${price}`
                 })
             });

@@ -16,7 +16,6 @@ function App() {
           <Route path=":id" element={<ItemModal  />} />
         </Route>
         <Route path="/inventory" element={<Inventory />}>
-          {/* <Route path=":id" element={<ItemForm />} /> */}
         </Route>
         <Route path="/inventory/:id" element={<ItemForm />} />
       </Routes>

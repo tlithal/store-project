@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
-import { Button, Container, Modal } from 'react-bootstrap';
-import ItemModal from './ItemModal';
+import React, { useState, useEffect } from 'react';
+import { Container, Row } from 'react-bootstrap';
+import { Item } from './Item';
+import { storeApi } from '../api/StoreApi';
 
 function Home() {
-
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-
-    const handleShow = () => {
-        setShow(true);
-    }
+    const { inventory, setInventory } = useState([]);
 
     return(
         <Container fluid className="text-center mx-auto">
-            <h1>Home</h1>
-            <hr />
-
-            <Button variant="outline-primary" onClick={handleShow}>Testing</Button>
-            <ItemModal show={show} handleClose={handleClose} />
+            <Row>
+                <h1>Home</h1>
+                <hr />
+            </Row>
 
         </Container>
     );

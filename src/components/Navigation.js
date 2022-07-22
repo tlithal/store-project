@@ -7,7 +7,7 @@ import { Link, Outlet } from 'react-router-dom';
 function Navigation(props) {
     return (
         <div>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" className="font-link">
                 <Container>
                     <Navbar.Brand>
                     <Link to="/" className="nav-link">
