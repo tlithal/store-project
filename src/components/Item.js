@@ -14,7 +14,7 @@ export const Item = (props) => {
     return(
         <Col className="col-4">
             <Card className="w-75 mb-5 mx-auto border-dark font-link">
-                <Card.Header className="text-center">
+                <Card.Header className={cardClass}>
                     <Link to={`${item.id}`}><h2>{item.name}</h2></Link>
                 </Card.Header>
                 <Card.Body className={cardClass}>
