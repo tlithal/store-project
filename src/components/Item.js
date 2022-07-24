@@ -15,7 +15,7 @@ export const Item = (props) => {
         <Col className="col-4">
             <Card className="w-75 mb-5 mx-auto border-dark font-link">
                 <Card.Header className={cardClass}>
-                    <Link to={`${item.id}`}><h2>{item.name}</h2></Link>
+                    <h2>{item.name}</h2>
                 </Card.Header>
                 <Card.Body className={cardClass}>
                     Amount In Stock: {item.stock}
