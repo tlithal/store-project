@@ -21,3 +21,7 @@ code {
   background: grey;
 }
 
+.description {
+  background-color: beige;
+  font-size: 28px;
+}

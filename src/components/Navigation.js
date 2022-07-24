@@ -12,7 +12,7 @@ function Navigation(props) {
                     <Navbar.Brand>
                     <Link to="/" className="nav-link">
                         <img
-                            src="/images/melt.jpg"
+                            src="/images/Melt2.png"
                             width="30"
                             height="30"
                             className="d-inline-block align-top"
