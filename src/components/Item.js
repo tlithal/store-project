@@ -1,6 +1,5 @@
 import React from 'react';
 import { Col, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 export const Item = (props) => {
     //Creates an const 'item' using the values from the prop

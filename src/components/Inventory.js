@@ -23,8 +23,8 @@ function Inventory() {
 
     return (
         <div>
-            <Container className="font-link">
-                <h1 className="text-center mx-auto">Inventory</h1>
+            <Container className="font-link text-center mx-auto">
+                <h1>Inventory</h1>
                 <hr />
                 <Table striped bordered hover variant='dark' responsive="md">
                     <thead>
